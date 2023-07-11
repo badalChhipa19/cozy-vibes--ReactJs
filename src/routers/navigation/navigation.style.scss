@@ -1,0 +1,17 @@
+@import "../../assets//variable.scss";
+
+.navigation__container {
+  backdrop-filter: brightness(80%);
+  padding: 1rem 2rem;
+  grid-column: full-start / full-end;
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+  background-color: $color-grey;
+
+  .navigation__list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+}

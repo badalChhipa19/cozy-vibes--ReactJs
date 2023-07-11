@@ -1,0 +1,39 @@
+@import "../../assets/variable.scss";
+
+.form__field_box {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  label {
+    transition: all 0.3s;
+    pointer-events: none;
+    color: $color-grey-1;
+  }
+
+  input {
+    height: min-content;
+    font-size: inherit;
+    margin-left: 0.8rem;
+    padding: 0.4rem 0;
+    border: none;
+    border-bottom: 1px solid $color-grey-1;
+    background-color: transparent;
+    color: $color-white-2;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not(:valid) {
+      border-color: $color-grey-1;
+    }
+    &:not(:valid) + label {
+      color: $color-grey-1;
+    }
+
+    &[type="password"] {
+      letter-spacing: 2px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../assets/variable.scss";
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &__main {
+    background-color: $color-primary;
+    color: $color-white-1;
+  }
+  &__secondary {
+    backdrop-filter: blur(2px);
+    background-color: transparent;
+    color: $color-white-1;
+    border: 1px solid $color-white-1;
+  }
+}
