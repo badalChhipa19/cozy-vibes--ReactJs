@@ -1,0 +1,33 @@
+@import "../../assets/variable.scss";
+
+.service {
+  padding: 2rem 0.6rem;
+  background-color: $color-white-1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+  // box-shadow: 0 0 2rem 2px $color-grey-1;
+
+  &__icon {
+    width: 70%;
+    height: 70%;
+  }
+
+  &__name {
+    color: $color-primary;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+
+  &:hover {
+    background-color: $color-grey;
+  }
+}

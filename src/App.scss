@@ -1,7 +1,7 @@
 @import "./assets/variable.scss";
 .App {
   display: grid;
-  grid-template-rows: 5vh 95vh;
+  grid-template-rows: max-content minmax(95vh, max-content);
   grid-template-columns: [full-start]repeat(6, [col-start] 1fr [col-end]) [full-end];
   background-color: $color-white-3;
   grid-auto-rows: min-content;

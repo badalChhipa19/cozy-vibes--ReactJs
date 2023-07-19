@@ -24,10 +24,6 @@
   }
 }
 
-.invert {
-  flex-direction: column-reverse;
-}
-
 .focus {
   transition: all 0.2s ease-in-out;
   background-color: $color-grey !important;

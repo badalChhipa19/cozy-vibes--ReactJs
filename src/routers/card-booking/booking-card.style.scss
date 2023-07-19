@@ -1,0 +1,146 @@
+@import "../../assets/variable.scss";
+
+.booking {
+  grid-column: col-start 2 / col-end 5;
+  display: grid;
+  row-gap: 8rem;
+  column-gap: 4rem;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: fit-content repeat(2, 1fr);
+  margin-bottom: 10rem;
+
+  h2 {
+    grid-area: 1 / 1 / 2 / -1;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  h3 {
+    text-align: start;
+    font-size: 2rem;
+  }
+
+  // 1st grid
+  &__carousel {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // 2nd grid
+  &__services {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-area: 2 / 2 / 4 / -1;
+
+    &_list {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #777;
+      list-style: none;
+      display: grid;
+      row-gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &_item {
+      text-transform: uppercase;
+    }
+  }
+
+  &__blog {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_container {
+      display: flex;
+      gap: 2rem;
+      img {
+        height: 7rem;
+      }
+    }
+  }
+
+  &__cloud {
+    user-select: none;
+    h4 {
+      margin-top: 4rem;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    div {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      span {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #777;
+        background-color: #fff;
+        padding: 0.2rem 0.4rem;
+      }
+    }
+  }
+
+  &__addon {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    h4 {
+      margin-top: 4rem;
+    }
+
+    &_list {
+      list-style: none;
+      font-weight: 500;
+      column-gap: 2rem;
+    }
+
+    &_item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      label {
+        height: 1.4rem;
+        width: 1.4rem;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      input {
+        display: none;
+      }
+
+      input:checked + label {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  // 3rd grid
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    &_details {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      div {
+        font-size: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        column-gap: 3rem;
+      }
+    }
+  }
+}

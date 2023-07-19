@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { aboutDetails } from "../../assets/data";
 import Button from "../../components/button/button.component";
 import AboutCard from "../../components/card-about/card-about.component";
@@ -5,6 +7,11 @@ import AboutCard from "../../components/card-about/card-about.component";
 import "./home.style.scss";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const redirectHandler = (path) => {
+    navigate(`../${path}`);
+  };
+
   return (
     <>
       <div className="home__container">
@@ -13,7 +20,12 @@ const Home = () => {
         </span>
         <h1 className="heding__primary">Most Relaxing Place</h1>
         <div className="button__container">
-          <Button className="btn btn__main">Book a tour &rarr;</Button>
+          <Button
+            className="btn btn__main"
+            onClick={() => redirectHandler("hotel")}
+          >
+            Book a tour &rarr;
+          </Button>
           <Button className="btn btn__secondary">Know more &rarr;</Button>
         </div>
       </div>
@@ -32,7 +44,7 @@ const Home = () => {
       <div className="about__direct">
         <span className="about__direct_title">About us</span>
         <h2 className="heading__secondary">
-          Cozy Vibes <br /> Book now
+          Cozy Vibes A Hotel Booking Agency
         </h2>
         <p className="about__direct_text">
           Far far away, behind the word mountains, far from the countries
@@ -41,7 +53,12 @@ const Home = () => {
           language ocean.
         </p>
 
-        <Button className="btn btn__main btn__book_room">Book room now</Button>
+        <Button
+          className="btn btn__main btn__book_room"
+          onClick={() => redirectHandler("hotel/rooms")}
+        >
+          Book room now
+        </Button>
       </div>
     </>
   );

@@ -1,0 +1,11 @@
+.rooms {
+  grid-column: col-start 2 / col-end 5;
+
+  .rooms__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 6rem;
+    justify-items: center;
+  }
+}

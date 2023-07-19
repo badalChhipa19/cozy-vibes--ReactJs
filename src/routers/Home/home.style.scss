@@ -17,15 +17,6 @@
     text-transform: uppercase;
     backdrop-filter: blur(2px);
   }
-
-  .heding__primary {
-    backdrop-filter: blur(2px);
-    font-size: 5.8rem;
-    line-height: normal;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-
   .button__container {
     margin-top: 3rem;
     display: flex;
@@ -52,11 +43,6 @@
     font-weight: 700;
   }
 
-  .heading__secondary {
-    font-size: 5.6rem;
-    line-height: normal;
-    margin-bottom: 2rem;
-  }
   .about__direct_text {
     color: $color-grey-2;
   }

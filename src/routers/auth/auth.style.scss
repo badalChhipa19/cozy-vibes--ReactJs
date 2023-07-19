@@ -3,7 +3,7 @@
 .authontication__container {
   padding-top: 10%;
   grid-column: full-start / full-end;
-  background-image: url("../../assets/hero_BG.jpg");
+  background-image: url("../../assets/home_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   filter: brightness(80%);
@@ -17,5 +17,5 @@
   justify-content: center;
   align-items: flex-start;
   gap: 10rem;
-  backdrop-filter: brightness(30%) blur(2px);
+  backdrop-filter: brightness(30%) blur(5px);
 }
