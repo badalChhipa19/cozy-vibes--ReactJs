@@ -187,7 +187,7 @@ export const roomsDetails = [
     name: "Standard Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$20 / Night",
+    price: "20",
     booked: true,
     view: "Sea view",
     max: 3,
@@ -201,7 +201,7 @@ export const roomsDetails = [
     name: "Suite",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$50 / Night",
+    price: "50",
     booked: false,
     view: "city view",
     max: 3,
@@ -215,7 +215,7 @@ export const roomsDetails = [
     name: "Deluxe Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$80 / Night",
+    price: "80",
     booked: false,
     view: "Mountain view",
     max: 2,
@@ -229,7 +229,7 @@ export const roomsDetails = [
     name: "Executive Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$150 / Night",
+    price: "150",
     booked: false,
     view: "Garden view",
     max: 4,
@@ -243,7 +243,7 @@ export const roomsDetails = [
     name: "Family Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$160 / Night",
+    price: "160",
     booked: true,
     view: "Pool View",
     max: 3,
@@ -257,7 +257,7 @@ export const roomsDetails = [
     name: "Connecting/Adjoining Rooms",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$200 / Night",
+    price: "200",
     booked: false,
     view: "Rever view",
     max: 2,
@@ -271,7 +271,7 @@ export const roomsDetails = [
     name: "Junior Suite",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$300 / Night",
+    price: "300",
     booked: true,
     view: "Park view",
     max: 1,
@@ -285,7 +285,7 @@ export const roomsDetails = [
     name: "Penthouse Suite",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$350 / Night",
+    price: "350",
     booked: false,
     view: "Courtyard view",
     max: 6,
@@ -299,7 +299,7 @@ export const roomsDetails = [
     name: "Accessible Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$450 / Night",
+    price: "450",
     booked: false,
     view: "Landmark view",
     max: 6,
@@ -313,7 +313,7 @@ export const roomsDetails = [
     name: "Villa or Bungalow",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$600 / Night",
+    price: "600",
     booked: false,
     view: "Golf course view",
     max: 5,
@@ -327,7 +327,7 @@ export const roomsDetails = [
     name: "Standard Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$20 / Night",
+    price: "20",
     booked: false,
     view: "beachfront view",
     max: 2,
@@ -341,7 +341,7 @@ export const roomsDetails = [
     name: "Suite:",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$50 / Night",
+    price: "50",
     booked: false,
     view: "Forest view",
     max: 3,
@@ -355,7 +355,7 @@ export const roomsDetails = [
     name: "Deluxe Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$80 / Night",
+    price: "80",
     booked: false,
     view: "beachfront view",
     max: 3,
@@ -369,7 +369,7 @@ export const roomsDetails = [
     name: "Executive Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$150/ Night",
+    price: "15",
     booked: false,
     view: "sea view",
     max: 4,
@@ -383,7 +383,7 @@ export const roomsDetails = [
     name: "Family Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$160/ Night",
+    price: "16",
     booked: true,
     view: "pool view",
     max: 4,
@@ -397,7 +397,7 @@ export const roomsDetails = [
     name: "Connecting/Adjoining Rooms",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$200/ Night",
+    price: "20",
     booked: false,
     view: "Golf course view",
     max: 6,
@@ -411,7 +411,7 @@ export const roomsDetails = [
     name: "Junior Suite",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$300/ Night",
+    price: "30",
     booked: true,
     view: "Courtyard View",
     max: 6,
@@ -425,7 +425,7 @@ export const roomsDetails = [
     name: "Penthouse Suite",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$350/ Night",
+    price: "35",
     booked: false,
     view: "City view",
     max: 5,
@@ -439,7 +439,7 @@ export const roomsDetails = [
     name: "Accessible Room",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$450/ Night",
+    price: "45",
     booked: false,
     view: "Golf course view",
     max: 5,
@@ -453,7 +453,7 @@ export const roomsDetails = [
     name: "Villa or Bungalow",
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    price: "$600/ Night",
+    price: "60",
     booked: true,
     view: "Courtyard View",
     max: 2,

@@ -6,6 +6,7 @@
   grid-column: full-start / full-end;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: max-content;
   background-color: $color-grey;
 
@@ -13,5 +14,11 @@
     list-style: none;
     display: flex;
     gap: 2rem;
+    align-items: center;
+
+    &_item:last-child {
+      padding: 0.4rem 0.8rem;
+      border: 1px solid $color-primary;
+    }
   }
 }

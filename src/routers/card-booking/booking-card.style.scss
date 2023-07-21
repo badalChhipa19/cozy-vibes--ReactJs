@@ -105,21 +105,27 @@
 
     &_item {
       display: flex;
-      align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      border-bottom: 1px solid $color-grey-2;
+      margin-bottom: 1rem;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-      label {
-        height: 1.4rem;
-        width: 1.4rem;
-        background-color: #fff;
-        cursor: pointer;
-      }
-      input {
-        display: none;
-      }
+        label {
+          height: 1.4rem;
+          width: 1.4rem;
+          background-color: #fff;
+          cursor: pointer;
+        }
+        input {
+          display: none;
+        }
 
-      input:checked + label {
-        background-color: $color-primary;
+        input:checked + label {
+          background-color: $color-primary;
+        }
       }
     }
   }
@@ -140,6 +146,17 @@
         display: grid;
         grid-template-columns: repeat(2, max-content);
         column-gap: 3rem;
+      }
+
+      .checkout__container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+
+        span {
+          font-size: 2rem;
+        }
       }
     }
   }

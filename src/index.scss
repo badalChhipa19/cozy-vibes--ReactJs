@@ -27,7 +27,9 @@ body {
 }
 
 .link:link,
-.link:visited {
+.link:visited,
+.navigation__list_item span {
+  cursor: pointer;
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 500;

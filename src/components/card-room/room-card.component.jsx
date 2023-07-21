@@ -19,7 +19,9 @@ const Room = ({ details, invertClass }) => {
         <h3 className="heading__tertiary">{details.name}</h3>
         <span className="room__text">{details.description}</span>
         <div className="room__booking_box">
-          <span className="room__price">{details.price}</span>
+          <span className="room__price">
+            <strong>${details.price}</strong>/Night
+          </span>
           {details.booked ? (
             <Button className="btn btn__main btn__disable">Book now</Button>
           ) : (

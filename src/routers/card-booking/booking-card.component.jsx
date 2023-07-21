@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import Button from "../../components/button/button.component";
 import { roomsDetails } from "../../assets/data";
@@ -6,16 +8,83 @@ import { roomsDetails } from "../../assets/data";
 import "./booking-card.style.scss";
 
 const BookingCard = () => {
+  //! geting params from url
   const { search } = useLocation();
   const bookingId = +search.replace("?id=", "");
+
+  //! getting Item using params
   const bookingProduct = roomsDetails.find((room) => room.id === bookingId);
+
+  //! AddOn activities
+  const [price, setPrice] = useState(bookingProduct.price);
+  const [addOnServices, setAddOnServices] = useState([]);
+
+  //! Booking Button state
+  const [booking, setBooking] = useState("Book Now");
 
   //TODO:
   const addOnHandler = (e) => {
     const parent = e.target.closest(".booking__addon_item");
-    const AddOnPrice = parent.dataset.price;
-    return AddOnPrice;
+    const addOnItem = parent.dataset;
+    if (addOnServices.find((item) => item === addOnItem.item)) {
+      setAddOnServices(addOnServices.filter((item) => item !== addOnItem.item));
+      setPrice(+price - +addOnItem.price);
+    } else {
+      setAddOnServices([...addOnServices, addOnItem.item]);
+      setPrice(+price + +addOnItem.price);
+    }
   };
+
+  //! handle product booking
+  const bookedRoomsData = JSON.parse(localStorage.getItem("bookingDetails"))
+    ? JSON.parse(localStorage.getItem("bookingDetails"))
+    : [];
+  console.log("from outside localstorage =>", bookedRoomsData);
+
+  const currentUserEmail = useSelector((state) => state.user.currentUser.email);
+  const [bookedRoom, setBookedRoom] = useState(bookedRoomsData);
+  console.log("booking rooms from outside => ", bookedRoom);
+  //TODO:
+  const handleBookBtn = (e) => {
+    if (e.target.textContent === "Booked") {
+      //! Changing UI
+      e.target.classList.remove("btn__tertiary");
+      e.target.classList.add("btn__main");
+      setBooking("Book Now");
+      //!Updating booking details
+      const index = bookedRoom.findIndex(
+        (user) =>
+          user.email === currentUserEmail &&
+          +user.product === +bookingProduct.id
+      );
+      console.log("index", index);
+      const allBookedRoomsList = bookedRoom.splice(index, 1);
+      setBookedRoom(allBookedRoomsList);
+    }
+
+    if (e.target.textContent === "Book Now") {
+      //! Changing UI
+      e.target.classList.remove("btn__main");
+      e.target.classList.add("btn__tertiary");
+      setBooking("Booked");
+
+      //!Updating booking details
+      const allBookedRoomsList = [
+        ...bookedRoomsData,
+        {
+          email: currentUserEmail,
+          product: bookingProduct.id,
+          addOns: addOnServices,
+        },
+      ];
+      setBookedRoom(allBookedRoomsList);
+    }
+  };
+
+  useEffect(() => {
+    console.log("called");
+    localStorage.setItem("bookingDetails", JSON.stringify(bookedRoom));
+  }, [bookedRoom, setBookedRoom]);
 
   return (
     <div className="booking">
@@ -100,30 +169,57 @@ const BookingCard = () => {
         <div className="booking__addon">
           <h4>Add On</h4>
           <ul className="booking__addon_list">
-            <li className="booking__addon_item" data-price="2">
-              <input type="checkbox" id="1" onChange={addOnHandler} />
-              <label htmlFor="1"></label>
-              Breakfast
+            <li
+              className="booking__addon_item"
+              data-item="breakfast"
+              data-price="2"
+            >
+              <div>
+                <input type="checkbox" id="1" onClick={addOnHandler} />
+                <label htmlFor="1"></label>
+                Breakfast
+              </div>
+              <span>$2</span>
             </li>
-            <li className="booking__addon_item" data-price="5">
-              <input type="checkbox" id="2" onChange={addOnHandler} />
-              <label htmlFor="2"></label>
-              Airport Transfer
+            <li
+              className="booking__addon_item"
+              data-item="airportTransfer"
+              data-price="5"
+            >
+              <div>
+                <input type="checkbox" id="2" onClick={addOnHandler} />
+                <label htmlFor="2"></label>
+                Airport Transfer
+              </div>
+              <span>$5</span>
             </li>
-            <li className="booking__addon_item" data-price="10">
-              <input type="checkbox" id="3" onChange={addOnHandler} />
-              <label htmlFor="3"></label>
-              Spa and Wellness Services
+            <li className="booking__addon_item" data-item="spa" data-price="10">
+              <div>
+                <input type="checkbox" id="3" onClick={addOnHandler} />
+                <label htmlFor="3"></label>
+                Spa and Wellness Services
+              </div>
+              <span>$10</span>
             </li>
-            <li className="booking__addon_item" data-price="10">
-              <input type="checkbox" id="4" onChange={addOnHandler} />
-              <label htmlFor="4"></label>
-              Mini-Bar and Snacks
+            <li className="booking__addon_item" data-item="bar" data-price="10">
+              <div>
+                <input type="checkbox" id="4" onClick={addOnHandler} />
+                <label htmlFor="4"></label>
+                Mini-Bar and Snacks
+              </div>
+              <span>$10</span>
             </li>
-            <li className="booking__addon_item" data-price="20">
-              <input type="checkbox" id="5" onChange={addOnHandler} />
-              <label htmlFor="5"></label>
-              Business Services
+            <li
+              className="booking__addon_item"
+              data-item="business"
+              data-price="20"
+            >
+              <div>
+                <input type="checkbox" id="5" onClick={addOnHandler} />
+                <label htmlFor="5"></label>
+                Business Services
+              </div>
+              <span>$20</span>
             </li>
           </ul>
         </div>
@@ -151,7 +247,14 @@ const BookingCard = () => {
               <strong>Bed:</strong> {bookingProduct.bed}
             </span>
           </div>
-          <Button className="btn btn__main">Book Now</Button>
+          <div className="checkout__container">
+            <Button className="btn btn__main" onClick={handleBookBtn}>
+              {booking}
+            </Button>
+            <span>
+              <strong>Total:</strong> ${price}
+            </span>
+          </div>
         </div>
       </div>
     </div>
