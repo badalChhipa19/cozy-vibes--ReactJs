@@ -20,11 +20,12 @@ const BookingCard = () => {
   const [addOnServices, setAddOnServices] = useState([]);
 
   //! Booking Button state
-  const [booking, setBooking] = useState("Book Now");
+  // const [booking, setBooking] = useState(null);
 
   //TODO:
   const addOnHandler = (e) => {
     const parent = e.target.closest(".booking__addon_item");
+
     const addOnItem = parent.dataset;
     if (addOnServices.find((item) => item === addOnItem.item)) {
       setAddOnServices(addOnServices.filter((item) => item !== addOnItem.item));
@@ -39,50 +40,53 @@ const BookingCard = () => {
   const bookedRoomsData = JSON.parse(localStorage.getItem("bookingDetails"))
     ? JSON.parse(localStorage.getItem("bookingDetails"))
     : [];
-  console.log("from outside localstorage =>", bookedRoomsData);
+  // console.log("==>", bookedRoomsData);
 
   const currentUserEmail = useSelector((state) => state.user.currentUser.email);
   const [bookedRoom, setBookedRoom] = useState(bookedRoomsData);
-  console.log("booking rooms from outside => ", bookedRoom);
+  // console.log("bookedRoom", bookedRoom);
+  // console.log("booking", booking);
   //TODO:
   const handleBookBtn = (e) => {
     if (e.target.textContent === "Booked") {
       //! Changing UI
       e.target.classList.remove("btn__tertiary");
       e.target.classList.add("btn__main");
-      setBooking("Book Now");
+      // setBooking("Book Now");
+      e.target.textContent = "Book Now";
       //!Updating booking details
       const index = bookedRoom.findIndex(
         (user) =>
           user.email === currentUserEmail &&
           +user.product === +bookingProduct.id
       );
-      console.log("index", index);
-      const allBookedRoomsList = bookedRoom.splice(index, 1);
-      setBookedRoom(allBookedRoomsList);
+      const allBookedRoomsList = bookedRoomsData.slice(index);
+      return setBookedRoom(allBookedRoomsList);
     }
 
     if (e.target.textContent === "Book Now") {
       //! Changing UI
       e.target.classList.remove("btn__main");
       e.target.classList.add("btn__tertiary");
-      setBooking("Booked");
+      // setBooking("Booked");
+      e.target.textContent = "Booked";
 
       //!Updating booking details
       const allBookedRoomsList = [
-        ...bookedRoomsData,
+        ...bookedRoom,
         {
           email: currentUserEmail,
           product: bookingProduct.id,
           addOns: addOnServices,
+          price: price,
         },
       ];
-      setBookedRoom(allBookedRoomsList);
+      return setBookedRoom(allBookedRoomsList);
     }
   };
 
   useEffect(() => {
-    console.log("called");
+    // console.log("called", bookedRoom);
     localStorage.setItem("bookingDetails", JSON.stringify(bookedRoom));
   }, [bookedRoom, setBookedRoom]);
 
@@ -175,6 +179,7 @@ const BookingCard = () => {
               data-price="2"
             >
               <div>
+                {/* {} */}
                 <input type="checkbox" id="1" onClick={addOnHandler} />
                 <label htmlFor="1"></label>
                 Breakfast
@@ -248,9 +253,19 @@ const BookingCard = () => {
             </span>
           </div>
           <div className="checkout__container">
-            <Button className="btn btn__main" onClick={handleBookBtn}>
-              {booking}
-            </Button>
+            {bookedRoom.find(
+              (user) =>
+                user.email === currentUserEmail && user.product === bookingId
+            ) ? (
+              <Button className="btn btn__tertiary" onClick={handleBookBtn}>
+                Booked
+              </Button>
+            ) : (
+              <Button className="btn btn__main" onClick={handleBookBtn}>
+                Book Now
+              </Button>
+            )}
+
             <span>
               <strong>Total:</strong> ${price}
             </span>

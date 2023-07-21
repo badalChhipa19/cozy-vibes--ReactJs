@@ -28,7 +28,6 @@ const SignUp = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  console.log(oldUserDetails);
   const signUpHandler = (e) => {
     e.preventDefault();
     if (password.length < 6)
@@ -36,7 +35,6 @@ const SignUp = () => {
 
     if (password !== confirmPassword)
       return errorHandler(`Password and confirm password dosen't match`);
-    console.log(oldUserDetails);
 
     if (!oldUserDetails) {
       localStorage.setItem("users", JSON.stringify([formFields]));
@@ -44,7 +42,6 @@ const SignUp = () => {
     }
 
     const listUsers = [...oldUserDetails, formFields];
-    console.log(listUsers);
     if (oldUserDetails.find((user) => user.email === email))
       return errorHandler(`User exist.. tyr to signIn`);
 

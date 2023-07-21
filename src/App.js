@@ -6,6 +6,7 @@ import Home from "./routers/home/home.component";
 import Hotel from "./routers/hotel/hotels.component";
 import Rooms from "./routers/rooms/rooms.component";
 import BookingCard from "./routers/card-booking/booking-card.component";
+import PrivateRoute from "./util/privateroute.util";
 
 import "./App.scss";
 
@@ -17,8 +18,15 @@ function App() {
           <Route index element={<Home />} />
           <Route path="auth" element={<Auth />} />
           <Route path="hotel" element={<Hotel />} />
-          <Route path="hotel/rooms" element={<Rooms />} />
-          <Route path="resto&bar" element={<h1>I'm Resto page</h1>} />
+          {/* <Route path="hotel/rooms" element={<Rooms />} /> */}
+          <Route
+            path="hotel/rooms"
+            element={
+              <PrivateRoute other={<Auth />}>
+                <Rooms />
+              </PrivateRoute>
+            }
+          />
           <Route path="booking/*" element={<BookingCard />} />
         </Route>
       </Routes>
