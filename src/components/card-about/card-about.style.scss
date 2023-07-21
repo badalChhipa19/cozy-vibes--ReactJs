@@ -4,8 +4,17 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  // width: 25rem;
   width: calc(45%);
+
+  &:hover > .about__card_details {
+    transition: all 0.2s ease-in-out;
+    background-color: $color-grey;
+    color: $color-white-1;
+    font-weight: 100;
+    .heading__tertiary {
+      color: $color-white-1;
+    }
+  }
 
   .about__card_details {
     cursor: pointer;
@@ -22,10 +31,4 @@
     width: 30%;
     height: fit-content;
   }
-}
-
-.focus {
-  transition: all 0.2s ease-in-out;
-  background-color: $color-grey !important;
-  color: aliceblue;
 }

@@ -1,8 +1,7 @@
 @import "../../assets/variable.scss";
 .hotel__content {
-  grid-column: full-start / full-end;
+  grid-column: col-start 2 / col-end 5;
   text-align: center;
-  padding-top: 5rem;
 
   .hotel__text {
     font-size: 2.4rem;
@@ -11,7 +10,6 @@
   }
 
   .hotel__container {
-    margin-top: 10rem;
     grid-column: full-start / full-end;
 
     display: grid;
@@ -26,20 +24,14 @@
 }
 
 .hotel__service_container {
+  grid-column: full-start / full-end;
   border-top: 1px solid $color-white-1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-top: 10rem;
   margin: 10rem 0;
-
-  .heading__tertiary {
-    user-select: none;
-    cursor: context-menu;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: $color-primary;
-  }
+  text-align: center;
 
   .services__container {
     display: grid;

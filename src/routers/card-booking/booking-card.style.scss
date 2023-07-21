@@ -1,5 +1,11 @@
 @import "../../assets/variable.scss";
 
+@mixin display-components {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .booking {
   grid-column: col-start 2 / col-end 5;
   display: grid;
@@ -9,15 +15,10 @@
   grid-template-rows: fit-content repeat(2, 1fr);
   margin-bottom: 10rem;
 
-  h2 {
+  .heading__container {
     grid-area: 1 / 1 / 2 / -1;
-    text-align: center;
-    margin-top: 5rem;
-  }
-
-  h3 {
-    text-align: start;
-    font-size: 2rem;
+    // text-align: center;
+    margin-bottom: 0;
   }
 
   // 1st grid
@@ -30,84 +31,88 @@
 
   // 2nd grid
   &__services {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     grid-area: 2 / 2 / 4 / -1;
+    @include display-components;
 
     &_list {
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: #777;
       list-style: none;
       display: grid;
       row-gap: 1rem;
       grid-template-columns: repeat(2, 1fr);
     }
     &_item {
+      user-select: none;
+      font-size: 1.6rem;
+      color: $color-font-3;
       text-transform: uppercase;
     }
   }
 
   &__blog {
     margin-top: 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include display-components;
+    &_heading {
+      color: $color-primary;
+      cursor: pointer;
+    }
+
+    span {
+      cursor: context-menu;
+      font-size: 1.6rem;
+      color: $color-font-3;
+    }
 
     &_container {
       display: flex;
       gap: 2rem;
+
       img {
         height: 7rem;
+        cursor: pointer;
       }
     }
   }
 
   &__cloud {
-    user-select: none;
-    h4 {
-      margin-top: 4rem;
-    }
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    margin-top: 6rem;
+    @include display-components;
+
     div {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
+
       span {
+        user-select: none;
         text-align: center;
         text-transform: uppercase;
         font-size: 1.4rem;
-        font-weight: 500;
-        color: #777;
-        background-color: #fff;
+        font-weight: 800;
+        color: $color-font;
+        letter-spacing: 1px;
+        background-color: $color-white-1;
         padding: 0.2rem 0.4rem;
       }
     }
   }
 
   &__addon {
-    user-select: none;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    h4 {
-      margin-top: 4rem;
-    }
+    margin-top: 6rem;
+    @include display-components;
 
     &_list {
       list-style: none;
-      font-weight: 500;
-      column-gap: 2rem;
     }
 
     &_item {
+      color: $color-font;
+      font-weight: 800;
+
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid $color-grey-2;
+      align-items: center;
       margin-bottom: 1rem;
+
       div {
         display: flex;
         align-items: center;
@@ -116,8 +121,9 @@
         label {
           height: 1.4rem;
           width: 1.4rem;
-          background-color: #fff;
           cursor: pointer;
+          background-color: $color-white-1;
+          border: 2px solid $color-font-3;
         }
         input {
           display: none;
@@ -125,6 +131,7 @@
 
         input:checked + label {
           background-color: $color-primary;
+          border: 2px solid $color-white-3;
         }
       }
     }
@@ -136,26 +143,37 @@
     flex-direction: column;
     gap: 8rem;
 
+    h2 {
+      text-align: center;
+    }
+
     &_details {
       display: flex;
       flex-direction: column;
       gap: 5rem;
 
       div {
+        color: $color-font;
         font-size: 1.6rem;
         display: grid;
         grid-template-columns: repeat(2, max-content);
         column-gap: 3rem;
+
+        strong {
+          font-size: 1.8rem;
+          font-family: "Tektur";
+        }
       }
 
       .checkout__container {
         display: flex;
+        gap: 5rem;
         flex-direction: row-reverse;
         justify-content: flex-end;
         align-items: center;
 
         span {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
       }
     }

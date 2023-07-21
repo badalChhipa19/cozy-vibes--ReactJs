@@ -16,9 +16,9 @@ const HotelCard = ({ details }) => {
         alt={details.name}
         className="hotel__image"
       />
-      <h3 className="heading__tertiary" onClick={redirecthandler}>
+      <span className="hotel__name" onClick={redirecthandler}>
         {details.name}
-      </h3>
+      </span>
     </div>
   );
 };

@@ -42,7 +42,9 @@ const Home = () => {
       </div>
 
       <div className="about__direct">
-        <span className="about__direct_title">About us</span>
+        <h3 className="heading__tertiary heading__tertiary_colored">
+          About us
+        </h3>
         <h2 className="heading__secondary">
           Cozy Vibes A Hotel Booking Agency
         </h2>

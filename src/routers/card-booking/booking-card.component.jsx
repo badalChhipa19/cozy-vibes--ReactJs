@@ -19,9 +19,6 @@ const BookingCard = () => {
   const [price, setPrice] = useState(bookingProduct.price);
   const [addOnServices, setAddOnServices] = useState([]);
 
-  //! Booking Button state
-  // const [booking, setBooking] = useState(null);
-
   //TODO:
   const addOnHandler = (e) => {
     const parent = e.target.closest(".booking__addon_item");
@@ -40,12 +37,9 @@ const BookingCard = () => {
   const bookedRoomsData = JSON.parse(localStorage.getItem("bookingDetails"))
     ? JSON.parse(localStorage.getItem("bookingDetails"))
     : [];
-  // console.log("==>", bookedRoomsData);
 
   const currentUserEmail = useSelector((state) => state.user.currentUser.email);
   const [bookedRoom, setBookedRoom] = useState(bookedRoomsData);
-  // console.log("bookedRoom", bookedRoom);
-  // console.log("booking", booking);
   //TODO:
   const handleBookBtn = (e) => {
     if (e.target.textContent === "Booked") {
@@ -86,13 +80,17 @@ const BookingCard = () => {
   };
 
   useEffect(() => {
-    // console.log("called", bookedRoom);
     localStorage.setItem("bookingDetails", JSON.stringify(bookedRoom));
   }, [bookedRoom, setBookedRoom]);
 
   return (
     <div className="booking">
-      <h2 className="heading__secondary">Room Details</h2>
+      <div className="heading__container">
+        <h3 className="heading__tertiary">
+          <span className="name__satrt">Cozy</span> vibes
+        </h3>
+        <h2 className="heading__secondary">Room Details</h2>
+      </div>
       <div className="booking__carousel">
         <img src={bookingProduct.image} alt={bookingProduct.name} />
       </div>
@@ -118,7 +116,9 @@ const BookingCard = () => {
               alt="blog"
             />
             <div className="booking__blog_text">
-              <h5 className="">Far far away, behind the word mountains</h5>
+              <h5 className="booking__blog_heading">
+                Far far away, behind the word mountains
+              </h5>
               <span>December 24, 2022</span>
             </div>
           </div>
@@ -128,7 +128,9 @@ const BookingCard = () => {
               alt="blog"
             />
             <div className="booking__blog_text">
-              <h5 className="">Far far away, behind the word mountains</h5>
+              <h5 className="booking__blog_heading">
+                Far far away, behind the word mountains
+              </h5>
               <span>December 24, 2022</span>
             </div>
           </div>
@@ -139,7 +141,9 @@ const BookingCard = () => {
               alt="blog"
             />
             <div className="booking__blog_text">
-              <h5 className="">Far far away, behind the word mountains</h5>
+              <h5 className="booking__blog_heading">
+                Far far away, behind the word mountains
+              </h5>
               <span>December 24, 2022</span>
             </div>
           </div>
@@ -149,14 +153,16 @@ const BookingCard = () => {
               alt="blog"
             />
             <div className="booking__blog_text">
-              <h5 className="">Far far away, behind the word mountains</h5>
+              <h5 className="booking__blog_heading">
+                Far far away, behind the word mountains
+              </h5>
               <span>December 24, 2022</span>
             </div>
           </div>
         </div>
 
         <div className="booking__cloud">
-          <h4>Tag Cloud</h4>
+          <h3 className="heading__tertiary">Tag Cloud</h3>
           <div>
             <span>hotel</span>
             <span>pool</span>
@@ -171,7 +177,7 @@ const BookingCard = () => {
         </div>
 
         <div className="booking__addon">
-          <h4>Add On</h4>
+          <h3 className="heading__tertiary">Add On</h3>
           <ul className="booking__addon_list">
             <li
               className="booking__addon_item"
@@ -232,11 +238,14 @@ const BookingCard = () => {
 
       <div className="booking__description">
         <div>
-          <h2 className="heading__secondary">{bookingProduct.name}</h2>
+          <h2 className="heading__secondary heading__secondary_colored">
+            {bookingProduct.name}
+          </h2>
           <span className="boooking__description_text">
             {bookingProduct.description.repeat(3)}
           </span>
         </div>
+
         <div className="booking__description_details">
           <div>
             <span>

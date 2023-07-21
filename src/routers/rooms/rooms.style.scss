@@ -1,6 +1,6 @@
 .rooms {
   grid-column: col-start 2 / col-end 5;
-
+  margin-bottom: 10rem;
   .rooms__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

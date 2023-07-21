@@ -11,11 +11,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #f0f8ff;
+  color: $color-white-1;
 
   .home__text {
+    font-size: 2.4rem;
+    font-weight: 200;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px) brightness(80%);
   }
   .button__container {
     margin-top: 3rem;
@@ -36,17 +39,8 @@
   grid-column: col-start 4 / col-end 5;
   display: flex;
   flex-direction: column;
-  // gap: 3rem;
   padding: 4rem;
 
-  .about__direct_title {
-    color: $color-primary;
-    font-weight: 700;
-  }
-
-  .about__direct_text {
-    color: $color-grey-2;
-  }
   .btn__book_room {
     width: fit-content;
     margin-top: 4rem;

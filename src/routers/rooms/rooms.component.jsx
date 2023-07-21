@@ -17,10 +17,14 @@ const Rooms = () => {
 
   return (
     <div className="rooms">
-      <h3 className="heading__tertiary">Cozy Vibes</h3>
-      <h2 className="heading__secondary">
-        Let's have a look what we have for you
-      </h2>
+      <div className="heading__container">
+        <h3 className="heading__tertiary">
+          <span className="name__satrt">Cozy</span> Vibes
+        </h3>
+        <h2 className="heading__secondary">
+          Let's have a look what we have for you
+        </h2>
+      </div>
       <div className="rooms__container">
         {roomsArray.map((room, i) => {
           let invertClass = "";

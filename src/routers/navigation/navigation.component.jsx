@@ -17,7 +17,7 @@ const Navigation = () => {
     <>
       <div className="navigation__container">
         <Link to="/" className="brand__name link">
-          Cozy Vibes
+          <span className="name__satrt">Cozy</span> Vibes
         </Link>
         <ul className="navigation__list">
           <li className="navigation__list_item">

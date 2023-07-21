@@ -6,15 +6,13 @@
   max-width: 40rem;
   position: relative;
   overflow: hidden;
-  &:hover {
-    cursor: context-menu;
-  }
 
   &__description {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 4rem 2rem;
+    letter-spacing: 2px;
     text-align: center;
     background-color: #fff;
     transition: all 0.3s;
@@ -24,7 +22,6 @@
     margin-top: 4rem;
     display: flex;
     justify-content: space-around;
-    // align-items: center;
   }
 
   &__image {
@@ -40,11 +37,20 @@
     right: -3rem;
     padding: 1px 3rem;
     transform: rotate(45deg);
+    z-index: 1;
+  }
+
+  &:hover {
+    cursor: context-menu;
   }
 
   &:hover &__description {
     background-color: $color-grey;
-    color: $color-white-3;
+    color: $color-white-1;
+    font-weight: 100;
+    .heading__tertiary {
+      color: $color-white-1;
+    }
   }
 
   &:hover &__image {
