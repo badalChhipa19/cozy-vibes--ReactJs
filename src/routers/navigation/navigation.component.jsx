@@ -30,11 +30,11 @@ const Navigation = () => {
               Hotel
             </Link>
           </li>
-          <li className="navigation__list_item">
+{/*           <li className="navigation__list_item">
             <Link to="/rooms" className="link nav__link">
               Rooms
             </Link>
-          </li>
+          </li> */}
           {/* <li className="navigation__list_item">
             <Link to="/resto&bar" className="link nav__link">
               Resto & Bar
