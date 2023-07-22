@@ -15,7 +15,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const middleware = [logger];
 
-const composeEnhancers = compose(applyMiddleware(...middleware));
+// const composeEnhancers = compose(applyMiddleware(...middleware));
 
 export const store = createStore(persistedReducer);
 // export const store = createStore(persistedReducer, undefined, composeEnhancers);
