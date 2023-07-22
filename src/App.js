@@ -2,7 +2,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 
 import Navigation from "./routers/navigation/navigation.component";
 import Auth from "./routers/auth/auth.component";
-import Home from "./routers/home/home.component";
+import Home from "./routers/Home/home.component";
 import Hotel from "./routers/hotel/hotels.component";
 import Rooms from "./routers/rooms/rooms.component";
 import BookingCard from "./routers/card-booking/booking-card.component";

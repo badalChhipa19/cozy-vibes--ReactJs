@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { aboutDetails } from "../../assets/data";
 import Button from "../../components/button/button.component";
@@ -26,7 +26,7 @@ const Home = () => {
           >
             Book a tour &rarr;
           </Button>
-          <Button className="btn btn__secondary">Know more &rarr;</Button>
+          <Link className="link btn btn__secondary">Know more &rarr;</Link>
         </div>
       </div>
 
