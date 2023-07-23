@@ -51,7 +51,9 @@ const SignUp = () => {
 
   return (
     <div className="sign__up_container">
-      <h2>Don't have an account?</h2>
+      <h3 className="heading__tertiary heading__tertiary_colored">
+        Don't have an account?
+      </h3>
       <form className="form">
         <InputField
           label="Name"

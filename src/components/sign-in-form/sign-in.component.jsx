@@ -44,7 +44,9 @@ const SignIn = () => {
 
   return (
     <div className="sign__in_container">
-      <h2>Already have an account?</h2>
+      <h3 className="heading__tertiary heading__tertiary_colored">
+        Already have an account?
+      </h3>
       <form className="form" onSubmit={handleSignIn}>
         <InputField
           label="Email"

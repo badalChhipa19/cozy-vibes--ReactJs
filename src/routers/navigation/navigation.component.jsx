@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,10 +8,12 @@ import { setCurrentUser } from "../../store/user/user.action";
 import "./navigation.style.scss";
 
 const Navigation = () => {
+  const navigation = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
   const signOutHandler = () => {
     dispatch(setCurrentUser(null));
+    return navigation("/auth");
   };
 
   return (
