@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
@@ -13,6 +14,7 @@ const defaultFormFields = {
 };
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const registeredUsers = JSON.parse(localStorage.getItem("users"));
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
@@ -39,7 +41,8 @@ const SignIn = () => {
     }
 
     dispatch(setCurrentUser(user));
-    return setFormFields(defaultFormFields);
+    setFormFields(defaultFormFields);
+    return navigate("/");
   };
 
   return (
