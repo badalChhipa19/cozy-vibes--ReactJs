@@ -5,6 +5,10 @@ import { useState } from "react";
 import { setCurrentUser } from "../../store/user/user.action";
 import InputField from "../input-field/input-field.component";
 import Button from "../button/button.component";
+import {
+  signInWithGooglePopup,
+  addCollectionAndDocuments,
+} from "../../util/firebase/firebase.utils";
 
 import "./sign-in.style.scss";
 
@@ -45,6 +49,11 @@ const SignIn = () => {
     return navigate("/");
   };
 
+  const handleSignInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await addCollectionAndDocuments(user);
+  };
+
   return (
     <div className="sign__in_container">
       <h3 className="heading__tertiary heading__tertiary_colored">
@@ -66,7 +75,19 @@ const SignIn = () => {
           value={password}
           onChange={changehandler}
         />
-        <Button className="btn btn__main">Sign In</Button>
+
+        <div className="sign__in_buttons_box">
+          <Button className="btn btn__main" type="submit">
+            Sign In
+          </Button>
+          <Button
+            className="btn btn__tertiary"
+            type="button"
+            onClick={handleSignInWithGoogle}
+          >
+            Google Sign In
+          </Button>
+        </div>
       </form>
     </div>
   );
