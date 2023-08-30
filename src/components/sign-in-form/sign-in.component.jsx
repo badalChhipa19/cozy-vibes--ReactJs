@@ -7,6 +7,7 @@ import InputField from "../input-field/input-field.component";
 import Button from "../button/button.component";
 import {
   signInWithGooglePopup,
+  signInUserWithEmailAndPassword,
   addCollectionAndDocuments,
 } from "../../util/firebase/firebase.utils";
 
@@ -19,7 +20,6 @@ const defaultFormFields = {
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const registeredUsers = JSON.parse(localStorage.getItem("users"));
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const dispatch = useDispatch();
@@ -29,22 +29,25 @@ const SignIn = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleSignIn = (event) => {
+  const handleSignIn = async (event) => {
     event.preventDefault();
-    if (!registeredUsers) {
-      setFormFields(defaultFormFields);
-      return alert(`User dosen't exist`);
-    }
-    const user = registeredUsers.find(
-      (user) =>
-        user.email === formFields.email && user.password === formFields.password
-    );
-    if (!user) {
-      setFormFields(defaultFormFields);
-      return alert(`Invalid credentials or user does not exist`);
+
+    try {
+      const { user } = await signInUserWithEmailAndPassword(email, password);
+      dispatch(setCurrentUser(user));
+    } catch (error) {
+      switch (error) {
+        case "auth/wrong-password":
+          alert("Password Incorrect");
+          break;
+        case "auth/user-not-found":
+          alert("Email Incorrect or Try signUp.");
+          break;
+        default:
+          console.log(error);
+      }
     }
 
-    dispatch(setCurrentUser(user));
     setFormFields(defaultFormFields);
     return navigate("/");
   };

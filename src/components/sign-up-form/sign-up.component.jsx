@@ -2,6 +2,10 @@ import { useState } from "react";
 
 import InputField from "../input-field/input-field.component";
 import Button from "../button/button.component";
+import {
+  createAuthUserWithEmailAndPassword,
+  addCollectionAndDocuments,
+} from "../../util/firebase/firebase.utils";
 
 import "./sign-up.style.scss";
 
@@ -15,7 +19,6 @@ const defaultInputFields = {
 const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultInputFields);
   const { displayName, email, password, confirmPassword } = formFields;
-  let oldUserDetails = JSON.parse(localStorage.getItem("users"));
 
   const errorHandler = (msg) => {
     setFormFields(defaultInputFields);
@@ -28,7 +31,7 @@ const SignUp = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const signUpHandler = (e) => {
+  const signUpHandler = async (e) => {
     e.preventDefault();
     if (password.length < 6)
       return errorHandler("Password must be at least 6 letter long.");
@@ -36,16 +39,20 @@ const SignUp = () => {
     if (password !== confirmPassword)
       return errorHandler(`Password and confirm password dosen't match`);
 
-    if (!oldUserDetails) {
-      localStorage.setItem("users", JSON.stringify([formFields]));
-      return setFormFields(defaultInputFields);
+    try {
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      addCollectionAndDocuments(user, { displayName });
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("This Email is already in use. Try to sign In.");
+      } else {
+        console.log(error);
+      }
     }
 
-    const listUsers = [...oldUserDetails, formFields];
-    if (oldUserDetails.find((user) => user.email === email))
-      return errorHandler(`User exist.. tyr to signIn`);
-
-    localStorage.setItem("users", JSON.stringify(listUsers));
     return setFormFields(defaultInputFields);
   };
 
