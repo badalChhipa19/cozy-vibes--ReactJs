@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -43,6 +44,9 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return; //If email or password are not true i.e. empty. then stop to exicute further
   return createUserWithEmailAndPassword(auth, email, password);
 };
+
+// TODO: SignOut user
+export const signOutUser = async () => await signOut(auth);
 
 //TODO: geting and seting document in firestore
 const db = getFirestore();

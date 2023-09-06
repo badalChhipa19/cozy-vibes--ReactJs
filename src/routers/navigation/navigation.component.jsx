@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { signOutUser } from "../../util/firebase/firebase.utils";
 
 import { setCurrentUser } from "../../store/user/user.action";
 
@@ -11,9 +12,14 @@ const Navigation = () => {
   const navigation = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
-  const signOutHandler = () => {
-    dispatch(setCurrentUser(null));
-    return navigation("/auth");
+  const signOutHandler = async () => {
+    try {
+      await signOutUser();
+      dispatch(setCurrentUser(null));
+      return navigation("/auth");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -33,7 +39,7 @@ const Navigation = () => {
               Hotel
             </Link>
           </li>
-{/*           <li className="navigation__list_item">
+          {/*           <li className="navigation__list_item">
             <Link to="/rooms" className="link nav__link">
               Rooms
             </Link>
