@@ -6,8 +6,16 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+} from "firebase/firestore";
 
 //! FireBase config to use firebase in your project !MUST
 const firebaseConfig = {
@@ -48,7 +56,11 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 // TODO: SignOut user
 export const signOutUser = async () => await signOut(auth);
 
-//TODO: geting and seting document in firestore
+//TODO: Keep trake of Auth change to use signin or signout user
+export const onAuthStateChangedListner = (callback) =>
+  onAuthStateChanged(auth, callback);
+
+//TODO: geting and seting document for users in firestore
 const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
@@ -72,4 +84,24 @@ export const addCollectionAndDocuments = async (
       console.log(err.message);
     }
   }
+};
+
+//TODO: getting and setting document for data in firestore
+
+export const addDataAndCollection = async (
+  collectionKey,
+  objextToAdd,
+  name
+) => {
+  const collectionRef = collection(db, collectionKey);
+
+  const batch = writeBatch(db);
+
+  objextToAdd.forEach((item) => {
+    const docRef = doc(collectionRef, item[name]);
+    batch.set(docRef, item);
+  });
+
+  await batch.commit();
+  console.log("Done..🤞🤞");
 };

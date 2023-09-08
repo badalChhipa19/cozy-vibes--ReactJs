@@ -181,6 +181,7 @@ export const hotelDetails = [
 
 export const roomsDetails = [
   {
+    title: "7Dh2F",
     id: 1,
     image:
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
@@ -195,6 +196,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "b6Kp9",
     id: 2,
     image:
       "https://plus.unsplash.com/premium_photo-1661901997525-fdbfb88d8554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDM5fHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -209,6 +211,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "YRv8",
     id: 3,
     image:
       "https://plus.unsplash.com/premium_photo-1682093007363-b05f4c3dc932?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkzfHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -223,6 +226,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "3Qa",
     id: 4,
     image:
       "https://plus.unsplash.com/premium_photo-1682093007363-b05f4c3dc932?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkzfHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -237,6 +241,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "sT5Jm",
     id: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1661964402307-02267d1423f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDQ1fHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -251,6 +256,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "zXp1K",
     id: 6,
     image:
       "https://images.unsplash.com/photo-1654064550858-c62b971a378a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDQ4fHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -265,6 +271,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "L9e",
     id: 7,
     image:
       "https://images.unsplash.com/photo-1594560913027-3ace4120fcc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM2fHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -279,6 +286,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "fP4D",
     id: 8,
     image:
       "https://images.unsplash.com/photo-1619292585355-ab0e3fd509fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHxob3RlbCUyMHJvb21zfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -293,6 +301,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "6gV7B",
     id: 9,
     image:
       "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -307,6 +316,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "Hk2",
     id: 10,
     image:
       "https://images.unsplash.com/photo-1620332372374-f108c53d2e03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -321,6 +331,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "1WvL",
     id: 11,
     image:
       "https://images.unsplash.com/photo-1620332372374-f108c53d2e03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -335,6 +346,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "RjN4G",
     id: 12,
     image:
       "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -349,6 +361,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "5sL",
     id: 13,
     image:
       "https://images.unsplash.com/photo-1594560913036-d15f23f8a91c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -363,6 +376,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "qA8z",
     id: 14,
     image:
       "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -377,6 +391,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "Ei3M",
     id: 15,
     image:
       "https://images.unsplash.com/photo-1631049035182-249067d7618e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -391,6 +406,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "oP6",
     id: 16,
     image:
       "https://images.unsplash.com/photo-1631049035182-249067d7618e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -405,6 +421,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "VzY9W",
     id: 17,
     image:
       "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWwlMjByb29tc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -419,6 +436,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "cB7",
     id: 18,
     image:
       "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWwlMjByb29tc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -433,6 +451,7 @@ export const roomsDetails = [
     bed: 2,
   },
   {
+    title: "4dRt",
     id: 19,
     image:
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -447,6 +466,7 @@ export const roomsDetails = [
     bed: 1,
   },
   {
+    title: "2xNq",
     id: 20,
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
