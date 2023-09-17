@@ -1,17 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { addDataAndCollection } from "./../../util/firebase/firebase.utils";
+import { getCollectionAndDocuments } from "./../../util/firebase/firebase.utils";
 import { roomsDetails } from "../../assets/data";
 import Room from "../../components/card-room/room-card.component";
 
 import "./rooms.style.scss";
 
 const Rooms = () => {
-  // useEffect(() => {
-  //   console.log(roomsDetails);
-  //   addDataAndCollection("roomsDetails", roomsDetails, "title");
-  // }, []);
-
   const randomNum = (val) => Math.trunc(Math.random() * val + 1);
 
   const randomNumbersArray = Array.from({ length: randomNum(6) }, () =>

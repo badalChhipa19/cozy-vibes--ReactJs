@@ -15,6 +15,8 @@ import {
   setDoc,
   collection,
   writeBatch,
+  query,
+  getDocs,
 } from "firebase/firestore";
 
 //! FireBase config to use firebase in your project !MUST
@@ -63,7 +65,7 @@ export const onAuthStateChangedListner = (callback) =>
 //TODO: geting and seting document for users in firestore
 const db = getFirestore();
 
-export const addCollectionAndDocuments = async (
+export const createUserCollectionAndDocuments = async (
   userAuth,
   additionalInformation = {}
 ) => {
@@ -86,8 +88,7 @@ export const addCollectionAndDocuments = async (
   }
 };
 
-//TODO: getting and setting document for data in firestore
-
+//TODO: setting document for data in firestore
 export const addDataAndCollection = async (
   collectionKey,
   objextToAdd,
@@ -104,4 +105,16 @@ export const addDataAndCollection = async (
 
   await batch.commit();
   console.log("Done..🤞🤞");
+};
+
+//TODO: Getting documents from db
+export const getCollectionAndDocuments = async function (collectionKey) {
+  const collectionRef = collection(db, collectionKey);
+
+  const q = query(collectionRef);
+
+  const querySnapSort = await getDocs(q);
+
+  const documentArray = querySnapSort.docs.map((item) => item.data());
+  return documentArray;
 };

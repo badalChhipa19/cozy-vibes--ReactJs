@@ -1,19 +1,23 @@
-// import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-// import { addDataAndCollection } from "./../../util/firebase/firebase.utils";
-import { aboutDetails } from "../../assets/data";
 import Button from "../../components/button/button.component";
 import AboutCard from "../../components/card-about/card-about.component";
+import { getCollectionAndDocuments } from "./../../util/firebase/firebase.utils";
 
 import "./home.style.scss";
 
 const Home = () => {
-  //! Used to create collection for about details on firebaseDatastore
-  // useEffect(() => {
-  //   addDataAndCollection("aboutDetails", aboutDetails, "title");
-  // }, []);
+  const [aboutDetails, setAboutDetails] = useState([]);
+
+  //TODO: Getting data for about section
+  useEffect(() => {
+    const getDetails = async () => {
+      const data = await getCollectionAndDocuments("aboutDetails");
+      setAboutDetails(data);
+    };
+    getDetails();
+  }, []);
 
   const navigate = useNavigate();
   const redirectHandler = (path) => {

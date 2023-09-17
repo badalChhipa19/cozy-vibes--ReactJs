@@ -1,18 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { addDataAndCollection } from "./../../util/firebase/firebase.utils";
-import { hotelDetails, servicesDetails } from "../../assets/data";
+import { getCollectionAndDocuments } from "./../../util/firebase/firebase.utils";
 import HotelCard from "../../components/card-hotel/hotel-card.component";
 import Service from "../../components/card-service/service-card.component";
 
 import "./hotels.style.scss";
 
 const Hotel = () => {
-  //! Adding data of services and hotel in firebaseDatastore
-  // useEffect(() => {
-  //   addDataAndCollection("servicesDetails", servicesDetails, "text");
-  //   addDataAndCollection("hotelDetails", hotelDetails, "name");
-  // }, []);
+  const [hotelDetails, setHotelDetails] = useState([]);
+  const [servicesDetails, setServiceDetails] = useState([]);
+
+  useEffect(() => {
+    const hotelData = async () => {
+      const data = await getCollectionAndDocuments("hotelDetails");
+      setHotelDetails(data);
+    };
+    const servicesData = async () => {
+      const data = await getCollectionAndDocuments("servicesDetails");
+      setServiceDetails(data);
+    };
+
+    hotelData();
+    servicesData();
+  }, []);
 
   return (
     <>

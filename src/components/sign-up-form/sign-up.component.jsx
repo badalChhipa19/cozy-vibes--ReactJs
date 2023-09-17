@@ -4,7 +4,7 @@ import InputField from "../input-field/input-field.component";
 import Button from "../button/button.component";
 import {
   createAuthUserWithEmailAndPassword,
-  addCollectionAndDocuments,
+  createUserCollectionAndDocuments,
 } from "../../util/firebase/firebase.utils";
 
 import "./sign-up.style.scss";
@@ -44,7 +44,7 @@ const SignUp = () => {
         email,
         password
       );
-      addCollectionAndDocuments(user, { displayName });
+      createUserCollectionAndDocuments(user, { displayName });
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("This Email is already in use. Try to sign In.");

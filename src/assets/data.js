@@ -136,6 +136,7 @@ export const hotelDetails = [
     name: "modern hotel",
     location: "",
     type: "",
+    rooms: ["7Dh2F", "b6Kp9", "YRv8"],
   },
   {
     id: 2,
@@ -144,6 +145,7 @@ export const hotelDetails = [
     name: "resort hotel",
     location: "",
     type: "",
+    rooms: ["3Qa", "sT5Jm", "zXp1K", "L9e"],
   },
   {
     id: 3,
@@ -152,6 +154,7 @@ export const hotelDetails = [
     name: "cultural hotel",
     location: "",
     type: "",
+    rooms: ["7Dh2F", "b6Kp9", "YRv8", "3Qa", "sT5Jm", "zXp1K"],
   },
   {
     id: 4,
@@ -160,6 +163,7 @@ export const hotelDetails = [
     name: "mountain hotel",
     location: "",
     type: "",
+    rooms: ["Ei3M", "oP6", "VzY9W", "cB7"],
   },
   {
     id: 5,
@@ -168,6 +172,7 @@ export const hotelDetails = [
     name: "lodge",
     location: "",
     type: "",
+    rooms: ["4dRt", "2xNq", "7Dh2F", "b6Kp9", "YRv8", "3Qa"],
   },
   {
     id: 6,
@@ -176,6 +181,7 @@ export const hotelDetails = [
     name: "luxury hotel",
     location: "",
     type: "",
+    rooms: ["1WvL", "RjN4G", "5sL", "qA8z", "Ei3M", "oP6"],
   },
 ];
 

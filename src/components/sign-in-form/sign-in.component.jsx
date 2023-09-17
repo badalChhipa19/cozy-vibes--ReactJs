@@ -8,7 +8,7 @@ import Button from "../button/button.component";
 import {
   signInWithGooglePopup,
   signInUserWithEmailAndPassword,
-  addCollectionAndDocuments,
+  createUserCollectionAndDocuments,
 } from "../../util/firebase/firebase.utils";
 
 import "./sign-in.style.scss";
@@ -24,11 +24,13 @@ const SignIn = () => {
   const { email, password } = formFields;
   const dispatch = useDispatch();
 
+  //* Every time something get changed in input box this function runs
   const changehandler = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
 
+  //* SignIn function implimentation
   const handleSignIn = async (event) => {
     event.preventDefault();
 
@@ -52,9 +54,10 @@ const SignIn = () => {
     return navigate("/");
   };
 
+  //* Sign  in with Google
   const handleSignInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    await addCollectionAndDocuments(user);
+    await createUserCollectionAndDocuments(user);
   };
 
   return (

@@ -10,7 +10,7 @@ const Room = ({ details, invertClass }) => {
   const btnBookHandler = () => {
     navigate(`../booking?id=${details.id}`);
   };
-
+  // console.log("Room card: ", details);
   return (
     <div className={`room ${invertClass}`}>
       {details.booked ? <span className="room__reserved">Reserved</span> : ""}
